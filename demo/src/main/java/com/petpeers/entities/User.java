@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
@@ -28,8 +29,19 @@ public class User {
 	@Column(name="user_password")
 	private String userPassword;
 	
+	@OneToMany(mappedBy="user")
 	List<Pet> pets;
 	
+	
+	
+	public List<Pet> getPets() {
+		return pets;
+	}
+
+	public void setPets(List<Pet> pets) {
+		this.pets = pets;
+	}
+
 	public User() {
 		super();
 	}

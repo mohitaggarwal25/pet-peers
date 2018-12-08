@@ -16,7 +16,3 @@ pet_ownerid int(5) null,
 foreign key (pet_ownerid) references pet_user(id)
 on delete cascade,
 primary key(id));
-
-insert into pets values(0,'Jicko',4,'CH',NULL);
-insert into pets values(0,'Lola',2,'DL',NULL);
-insert into pets values(0,'Chacko',3,'BL',NULL);
